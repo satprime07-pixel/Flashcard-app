@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flashcard App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="app">
+    <h1>Flashcards</h1>
+
+    <!-- Flashcard display -->
+    <div class="card" id="card">
+      <p id="text">Click "Flip"</p>
+    </div>
+    <button id="flipBtn">Flip</button>
+
+    <!-- Navigation -->
+    <div class="controls">
+      <button id="prevBtn">⬅ Prev</button>
+      <button id="nextBtn">Next ➡</button>
+    </div>
+
+    <!-- Add new flashcard -->
+    <div class="add-card">
+      <h2>Add Flashcard</h2>
+      <input type="text" id="newQuestion" placeholder="Question">
+      <input type="text" id="newAnswer" placeholder="Answer">
+      <button id="addBtn">Add</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker Registered'));
+    }
+  </script>
+</body>
+</html>
